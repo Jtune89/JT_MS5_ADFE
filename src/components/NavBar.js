@@ -14,9 +14,9 @@ const NavBar = () => {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="justify-content-end flex-grow-1 pe-3">
             <Nav.Link> <i className="fas fa-home"></i> Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <Nav.Link href="#link"> <i class="fa-solid fa-address-card"></i> About</Nav.Link>
             <NavDropdown title="User">
               <NavDropdown.Item href="#action/3.1"> 
               <i className="fas fa-sign-in-alt"></i> Sign In
