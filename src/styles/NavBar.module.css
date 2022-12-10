@@ -1,4 +1,6 @@
 .NavBar {
     background-color: rgb(211, 211, 211);
-    border: 2px solid rgb(184, 182, 182)
+    border: 2px solid rgb(184, 182, 182);
+    color: red;
 }
+
