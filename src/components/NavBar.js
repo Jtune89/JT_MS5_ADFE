@@ -17,14 +17,16 @@ const NavBar = () => {
           <Nav className="me-auto">
             <Nav.Link> <i className="fas fa-home"></i> Home</Nav.Link>
             <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="User" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Sign In</NavDropdown.Item>
+            <NavDropdown title="User">
+              <NavDropdown.Item href="#action/3.1"> 
+              <i className="fas fa-sign-in-alt"></i> Sign In
+              </NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
-                Register
+              <i className="fas fa-user-plus"></i> Register
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.3">
-                My Page
+              <NavDropdown.Item href="#action/3.3"> 
+              <i className="fa-solid fa-user"></i> My Page
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
