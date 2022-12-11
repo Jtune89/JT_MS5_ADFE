@@ -45,24 +45,3 @@ a {
     --bs-link-hover-color:rgba(0, 0, 0, 0.9);
     text-decoration: none;
 }
-
-.nav-link {
-    --bs-nav-link-font-size: 5px;
-    --bs-nav-link-color: grey;
-    --bs-nav-link-hover-color: rgb(2, 2, 2);
-    display: inline-block;
-    text-align: center;
-}
-
-.navbar-nav {
-    --bs-nav-link-font-size: 5px;
-    --bs-nav-link-color: grey;
-    --bs-nav-link-hover-color: grey;
-    display: inline-block;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-}

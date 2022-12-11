@@ -3,10 +3,12 @@
     background-color: white;
     min-height: 100vh;
     font-size: 15px;
+    color: red;
 }
 
 .Main {
-    padding-top: 120px;
+    padding-top: 300px;
+    color: red;
 }
 
 a {

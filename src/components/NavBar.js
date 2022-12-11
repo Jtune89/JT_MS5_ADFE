@@ -17,18 +17,8 @@ const NavBar = () => {
           <Nav className="ms-auto">
             <NavLink to ='/'> <i className="fas fa-home"></i> Home</NavLink>
             <NavLink to ='/about'> <i className="fa-solid fa-address-card"></i> About</NavLink>
-            <NavDropdown title="User">
-              <NavDropdown.Item to='/signin'> 
-              <i className="fas fa-sign-in-alt"></i> Sign In
-              </NavDropdown.Item>
-              <NavDropdown.Item to='/register'>
-              <i className="fas fa-user-plus"></i> Register
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item to='/mypage'>
-              <i className="fa-solid fa-user"></i> My Page
-              </NavDropdown.Item>
-            </NavDropdown>
+            <NavLink to ='/signin'> <i className="fas fa-sign-in-alt"></i> Sign In</NavLink>
+            <NavLink to ='/register'> <i className="fas fa-user-plus"></i> Register</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
