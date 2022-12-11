@@ -4,3 +4,13 @@
     min-height: 100vh;
     font-size: 15px;
 }
+
+.Main {
+    padding-top: 120px;
+}
+
+a {
+    --bs-link-hover-color:rgba(207, 28, 28, 0.55);
+    text-decoration: none;
+    --bs-link-color:rgba(207, 28, 28, 0.55);
+}
