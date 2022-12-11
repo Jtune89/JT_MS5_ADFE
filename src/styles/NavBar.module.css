@@ -1,7 +1,6 @@
 .NavBar {
     background-color: rgb(211, 211, 211);
     border: 2px solid rgb(184, 182, 182);
-    color: red !important;
     padding-left: 5px;
 }
 
@@ -12,7 +11,7 @@
 .NavBar{
     --bs-navbar-padding-x: 0;
     --bs-navbar-padding-y: 0.5rem;
-    --bs-navbar-color: rgba(207, 28, 28, 0.55);
+    --bs-navbar-color: rgba(54, 53, 53, 0.55);
     --bs-navbar-hover-color: rgba(0, 0, 0, 0.7);
     --bs-navbar-disabled-color: rgba(0, 0, 0, 0.3);
     --bs-navbar-active-color: rgba(0, 0, 0, 0.9);
@@ -31,6 +30,9 @@
     --bs-navbar-toggler-focus-width: 0.25rem;
     --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
     --bs-link-hover-color:rgba(207, 28, 28, 0.55);
+    --bs-nav-link-font-size: 15px;
+    --bs-nav-link-color: grey;
+    --bs-nav-link-hover-color: grey;
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -40,6 +42,27 @@
 }
 
 a {
-    --bs-link-hover-color:rgba(207, 28, 28, 0.55);
+    --bs-link-hover-color:rgba(0, 0, 0, 0.9);
     text-decoration: none;
+}
+
+.nav-link {
+    --bs-nav-link-font-size: 5px;
+    --bs-nav-link-color: grey;
+    --bs-nav-link-hover-color: rgb(2, 2, 2);
+    display: inline-block;
+    text-align: center;
+}
+
+.navbar-nav {
+    --bs-nav-link-font-size: 5px;
+    --bs-nav-link-color: grey;
+    --bs-nav-link-hover-color: grey;
+    display: inline-block;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
 }
