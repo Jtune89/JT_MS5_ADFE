@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
-import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-
 import { Form, Button, Image, Col, Row, Container } from "react-bootstrap";
+import axios from "axios";
 
 const SignUpForm = () => {
+    const [signUpData, setSignUpData] = useState({
+      username: "",
+      inputEmail:"",
+      password: "",
+      password1: "",
+    });
+    const { username, inputEmail, password, password1 } = signUpData;
+  
+    const handleChange = (event) => {
+      setSignUpData({
+        ...signUpData,
+        [event.target.name]: event.target.value,
+      });
+    };
+  
   return (
     <Row className={styles.Row}>
       <Col className="my-auto py-2 p-md-2" md={6}>
@@ -15,21 +29,23 @@ const SignUpForm = () => {
 
     <form>
         <div class="form-floating mb-3">
-        <label className={styles.Input} for="username" class="form-label">Username</label>
-        <input type="text" class="form-control" id="floatingInput" aria-describedby="username" />
+        <input type="text" class="form-control" id="username" aria-describedby="username" 
+         onChange={handleChange}/>
+         <label className={styles.Input} for="username" class="form-label">Username</label>
         </div>
         <div class="form-floating mb-3">
-        <label className={styles.Input} for="InputEmail" class="form-label">Email Address</label>
-        <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" />
+        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" 
+        onChange={handleChange} />
+         <label className={styles.Input} for="inputEmail" class="form-label">Email Address</label>
         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="form-floating mb-3">
-        <label className={styles.Input}  for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password"/>
+        <input type="password" class="form-control" id="password" onChange={handleChange} />
+        <label className={styles.Input} for="password" class="form-label">Password</label>
         </div>
         <div class="form-floating mb-3">
-        <label className={styles.Input} for="password1" class="form-label">Confirm Password</label>
-        <input type="password1" class="form-control" id="password1"/>
+        <input type="password" class="form-control" id="password1" onChange={handleChange} />
+        <label className={styles.Input} for="password" class="form-label">Confirm Password</label>
         </div>
         <div class="mb-3 form-check">
         </div>
