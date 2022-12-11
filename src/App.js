@@ -8,12 +8,13 @@ function App() {
     <div className={styles.App}>
       <NavBar />
       <Container className={styles.Main}>
-        <Routes>
-          <Route exact path="/" render={() => <h1>Home Page</h1>} />
-          <Route exact path="/about" render={() => <h1>About</h1>} />
-          <Route exact path="/about" render={() => <h1>Sign In</h1>} />
-          <Route exact path="/about" render={() => <h1>Register</h1>} />
-        </Routes>
+      <Routes>
+            <Route path="/" element= {<h1>Home Page</h1>} />
+            <Route path="/about" element= {<h1>About</h1>} />
+            <Route path="/signin" element= {<h1>Sign In</h1>} />
+            <Route path="/register" element= {<h1>Register</h1>} />
+            <Route render={() => <h3>Page not found</h3>} />
+          </Routes>
       </Container>
     </div>
   );
