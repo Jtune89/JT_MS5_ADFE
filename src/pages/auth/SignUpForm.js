@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import styles from "../../styles/SignInUpForm.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
@@ -16,25 +15,27 @@ const SignUpForm = () => {
 
     <form>
         <div class="form-floating mb-3">
-        <label for="username" class="form-label">Username</label>
+        <label className={styles.Input} for="username" class="form-label">Username</label>
         <input type="text" class="form-control" id="floatingInput" aria-describedby="username" />
         </div>
         <div class="form-floating mb-3">
-        <label for="InputEmail" class="form-label">Email Address</label>
+        <label className={styles.Input} for="InputEmail" class="form-label">Email Address</label>
         <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" />
         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="form-floating mb-3">
-        <label for="password" class="form-label">Password</label>
+        <label className={styles.Input}  for="password" class="form-label">Password</label>
         <input type="password" class="form-control" id="password"/>
         </div>
         <div class="form-floating mb-3">
-        <label for="password1" class="form-label">Confirm Password</label>
+        <label className={styles.Input} for="password1" class="form-label">Confirm Password</label>
         <input type="password1" class="form-control" id="password1"/>
         </div>
         <div class="mb-3 form-check">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-outline-success" type="submit">Register</button>
+        </div>
     </form>
 
         </Container>
