@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
 import appStyles from "../../App.module.css";
-import { Form, Button, Image, Col, Row, Container } from "react-bootstrap";
+import { Form, Button, Image, Col, Row, Container, Alert } from "react-bootstrap";
 import axios from "axios";
 
 const SignUpForm = () => {
@@ -13,6 +13,10 @@ const SignUpForm = () => {
       password1: "",
     });
     const { username, inputEmail, password, password1 } = signUpData;
+
+    const [errors, setErrors] = useState({});
+
+    const history = useNavigate();
   
     const handleChange = (event) => {
       setSignUpData({
@@ -20,31 +24,47 @@ const SignUpForm = () => {
         [event.target.name]: event.target.value,
       });
     };
-  
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            await axios.post("/dj-rest-auth/registration/", signUpData);
+            history.push('/signin')
+        } catch(err) {
+            setErrors(err.response?.data)
+        }
+    }
   return (
     <Row className={styles.Row}>
       <Col className="my-auto py-2 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>sign up</h1>
 
-    <form>
+    <form onSubmit={handleSubmit}>
         <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="username" aria-describedby="username" 
-         onChange={handleChange}/>
+        <input type="text" class="form-control" id="username" aria-describedby="username" name="username" 
+        value={username} onChange={handleChange}/>
          <label className={styles.Input} for="username" class="form-label">Username</label>
         </div>
+        {errors.username?.map((message, idx) => (
+            <Alert variant="warning" key={idx}>
+              {message}
+            </Alert>
+          ))}
         <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" 
-        onChange={handleChange} />
+        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" name="inputEmail"
+        onChange={handleChange} value={inputEmail}/>
          <label className={styles.Input} for="inputEmail" class="form-label">Email Address</label>
         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="password" onChange={handleChange} />
+        <input type="password" class="form-control" id="password" name="password" onChange={handleChange}
+        value={password} />
         <label className={styles.Input} for="password" class="form-label">Password</label>
         </div>
         <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="password1" onChange={handleChange} />
+        <input type="password" class="form-control" id="password1" name="password1" onChange={handleChange}
+        value={password1} />
         <label className={styles.Input} for="password" class="form-label">Confirm Password</label>
         </div>
         <div class="mb-3 form-check">
