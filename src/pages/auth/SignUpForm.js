@@ -43,28 +43,23 @@ const SignUpForm = () => {
     <form onSubmit={handleSubmit}>
         <div class="form-floating mb-3">
         <input type="text" class="form-control" id="username" aria-describedby="username" name="username" 
-        value={username} onChange={handleChange}/>
+        value={username} onChange={handleChange} required/>
          <label className={styles.Input} for="username" class="form-label">Username</label>
         </div>
-        {errors.username?.map((message, idx) => (
-            <Alert variant="warning" key={idx}>
-              {message}
-            </Alert>
-          ))}
         <div class="form-floating mb-3">
         <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" name="inputEmail"
-        onChange={handleChange} value={inputEmail}/>
+        onChange={handleChange} value={inputEmail} required/>
          <label className={styles.Input} for="inputEmail" class="form-label">Email Address</label>
         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="form-floating mb-3">
         <input type="password" class="form-control" id="password" name="password" onChange={handleChange}
-        value={password} />
+        value={password} required/>
         <label className={styles.Input} for="password" class="form-label">Password</label>
         </div>
         <div class="form-floating mb-3">
         <input type="password" class="form-control" id="password1" name="password1" onChange={handleChange}
-        value={password1} />
+        value={password1} required/>
         <label className={styles.Input} for="password" class="form-label">Confirm Password</label>
         </div>
         <div class="mb-3 form-check">
@@ -72,6 +67,11 @@ const SignUpForm = () => {
         <div class="d-grid gap-2 col-6 mx-auto">
         <button class="btn btn-outline-success" type="submit">Register</button>
         </div>
+        {errors.non_field_errors?.map((message, idx) => (
+            <Alert variant="warning" key={idx} className="mt-3">
+              {message}
+            </Alert>
+          ))}
     </form>
 
         </Container>
