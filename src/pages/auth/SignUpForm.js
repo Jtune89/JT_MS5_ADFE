@@ -1,80 +1,113 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../../styles/SignInUpForm.module.css";
+import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
-import { Form, Button, Image, Col, Row, Container, Alert } from "react-bootstrap";
+import { Form, Button, Image, Col, Row, Container, Alert,
+} from "react-bootstrap";
 import axios from "axios";
 
 const SignUpForm = () => {
-    const [signUpData, setSignUpData] = useState({
-      username: "",
-      inputEmail:"",
-      password: "",
-      password1: "",
+  const [signUpData, setSignUpData] = useState({
+    username: "",
+    password1: "",
+    password2: "",
+  });
+  const { username, password1, password2 } = signUpData;
+
+  const navigate = useNavigate();
+
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (event) => {
+    setSignUpData({
+      ...signUpData,
+      [event.target.name]: event.target.value,
     });
-    const { username, inputEmail, password, password1 } = signUpData;
+  };
 
-    const [errors, setErrors] = useState({});
-
-    const history = useNavigate();
-  
-    const handleChange = (event) => {
-      setSignUpData({
-        ...signUpData,
-        [event.target.name]: event.target.value,
-      });
-    };
-
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        try {
-            await axios.post("/dj-rest-auth/registration/", signUpData);
-            history.push('/signin')
-        } catch(err) {
-            setErrors(err.response?.data)
-        }
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await axios.post("/dj-rest-auth/registration/", signUpData);
+      navigate("/signin");
+    } catch (err) {
+      setErrors(err.response?.data);
     }
+  };
+
   return (
     <Row className={styles.Row}>
       <Col className="my-auto py-2 p-md-2" md={6}>
         <Container className={`${appStyles.Content} p-4 `}>
           <h1 className={styles.Header}>sign up</h1>
 
-    <form onSubmit={handleSubmit}>
-        <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="username" aria-describedby="username" name="username" 
-        value={username} onChange={handleChange} required/>
-         <label className={styles.Input} for="username" class="form-label">Username</label>
-        </div>
-        <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" name="inputEmail"
-        onChange={handleChange} value={inputEmail} required/>
-         <label className={styles.Input} for="inputEmail" class="form-label">Email Address</label>
-        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-        </div>
-        <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="password" name="password" onChange={handleChange}
-        value={password} required/>
-        <label className={styles.Input} for="password" class="form-label">Password</label>
-        </div>
-        <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="password1" name="password1" onChange={handleChange}
-        value={password1} required/>
-        <label className={styles.Input} for="password" class="form-label">Confirm Password</label>
-        </div>
-        <div class="mb-3 form-check">
-        </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-        <button class="btn btn-outline-success" type="submit">Register</button>
-        </div>
-        {errors.non_field_errors?.map((message, idx) => (
-            <Alert variant="warning" key={idx} className="mt-3">
-              {message}
-            </Alert>
-          ))}
-    </form>
+          <Form onSubmit={handleSubmit}>
+            <Form.Group controlId="username">
+              <Form.Label className="d-none">username</Form.Label>
+              <Form.Control
+                className={styles.Input}
+                type="text"
+                placeholder="Username"
+                name="username"
+                value={username}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            {errors.username?.map((message, idx) => (
+              <Alert variant="warning" key={idx}>
+                {message}
+              </Alert>
+            ))}
 
+            <Form.Group controlId="password1">
+              <Form.Label className="d-none">Password</Form.Label>
+              <Form.Control
+                className={styles.Input}
+                type="password"
+                placeholder="Password"
+                name="password1"
+                value={password1}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            {errors.password1?.map((message, idx) => (
+              <Alert key={idx} variant="warning">
+                {message}
+              </Alert>
+            ))}
+
+            <Form.Group controlId="password2">
+              <Form.Label className="d-none">Confirm password</Form.Label>
+              <Form.Control
+                className={styles.Input}
+                type="password"
+                placeholder="Confirm password"
+                name="password2"
+                value={password2}
+                onChange={handleChange}
+              />
+            </Form.Group>
+            {errors.password2?.map((message, idx) => (
+              <Alert key={idx} variant="warning">
+                {message}
+              </Alert>
+            ))}
+
+            <Button
+              className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
+              type="submit"
+            >
+              Sign up
+            </Button>
+            {errors.non_field_errors?.map((message, idx) => (
+              <Alert key={idx} variant="warning" className="mt-3">
+                {message}
+              </Alert>
+            ))}
+          </Form>
         </Container>
+
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signin">
             Already have an account? <span>Sign in</span>
@@ -87,9 +120,7 @@ const SignUpForm = () => {
       >
         <Image
           className={`${appStyles.FillerImage}`}
-          src={
-            "https://codeinstitute.s3.amazonaws.com/AdvancedReact/hero2.jpg"
-          }
+          src={"https://codeinstitute.s3.amazonaws.com/AdvancedReact/hero2.jpg"}
         />
       </Col>
     </Row>
