@@ -1,5 +1,5 @@
 .Button {
-    font-size: 0.8rem;
+    font-size: 1rem;
     align-self: center;
     border-radius: 100px;
     border-color: transparent;
@@ -35,7 +35,7 @@
   .Blue,
   .BlueOutline:hover,
   .Bright:hover {
-    background-color: #2142b2;
+    background-color:  #4ab221;
     color: #ffffff;
   }
   
@@ -43,7 +43,7 @@
   .Blue:hover {
     /* border: 1px solid #2142b2; */
     background-color: #ffffff;
-    color: #2142b2;
+    color:  #4ab221;
   }
   
   .Black,
@@ -64,6 +64,6 @@
   }
   
   .Bright {
-    background-color: #4ab221;
+    background-color: #9ad981;
     color: #020c00;
   }

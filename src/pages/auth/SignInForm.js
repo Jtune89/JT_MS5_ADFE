@@ -69,7 +69,7 @@ const setCurrentUser = useSetCurrentUser();
             ))}
 
             <Form.Group controlId="password">
-              <Form.Label className="d-none">Password</Form.Label>
+              <Form.Label className="d-none">Password <br/> </Form.Label>
               <Form.Control
                 type="password"
                 placeholder="Password"
@@ -84,11 +84,14 @@ const setCurrentUser = useSetCurrentUser();
                 {message}
               </Alert>
             ))}
+
+            <br/>
+
             <Button
               className={`${btnStyles.Button} ${btnStyles.Wide} ${btnStyles.Bright}`}
               type="submit"
             >
-              Sign in
+              Come On In
             </Button>
             {errors.non_field_errors?.map((message, idx) => (
               <Alert key={idx} variant="warning" className="mt-3">
@@ -99,7 +102,7 @@ const setCurrentUser = useSetCurrentUser();
         </Container>
         <Container className={`mt-3 ${appStyles.Content}`}>
           <Link className={styles.Link} to="/signup">
-            Don't have an account? <span>Sign up now!</span>
+          <span>Don't have an account? Sign up!</span>
           </Link>
         </Container>
       </Col>
@@ -108,8 +111,8 @@ const setCurrentUser = useSetCurrentUser();
         className={`my-auto d-none d-md-block p-2 ${styles.SignInCol}`}
       >
         <Image
-          className={`${appStyles.FillerImage}`}
-          src={"https://codeinstitute.s3.amazonaws.com/AdvancedReact/hero.jpg"}
+          className={`img-fluid`}
+          src={"https://res.cloudinary.com/dxztoqowl/image/upload/v1673704205/pexels-kaique-rocha-598917_o8md1t.jpg"}
         />
       </Col>
     </Row>

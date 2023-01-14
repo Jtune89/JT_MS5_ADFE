@@ -24,16 +24,16 @@ const NavBar = () => {
   };
 
   const addPostIcon = (
-    <NavLink to ='/posts/create'> <i className="far fa-plus-square"></i> Add Post</NavLink>
+  <NavLink to ='/posts/create'> <i className="far fa-plus-square"></i> Add Post</NavLink>
   )
   const loggedInIcons = <>
   <NavLink to ='/feed'> <i className="fas fa-stream"></i> Feed</NavLink>
   <NavLink to ='/liked'> <i className="fas fa-heart"></i> Liked</NavLink>
-  <NavLink to ='/commented'> <i className="fas fa-stream"></i> Commented On</NavLink>
+  <NavLink to ='/commented'> <i className="fas fa-stream"></i> Commented</NavLink>
   <NavLink to ='/signin' onClick={handleSignOut}>
     <i className="fas fa-sign-out-alt"></i> Sign Out</NavLink>
   <NavLink to={`/profiles/${currentUser?.profile_id}`}>
-  <Avatar src={currentUser?.profile_image} text='Profile' height={40}/>
+  <Avatar src={currentUser?.profile_image} text='Your Profile' height={40}/>
   </NavLink>
   </>
   const loggedOutIcons = <>
@@ -42,8 +42,7 @@ const NavBar = () => {
   </>
 
   return (
-    <Navbar expanded={expanded} className={styles.NavBar} class="collapse.navbar-collapse"
-    expand="md" fixed="top"
+    <Navbar expanded={expanded} className={styles.NavBar} expand="md" fixed="top"
     >
       <Container>
         <NavLink to='/'>

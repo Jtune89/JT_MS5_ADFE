@@ -1,17 +1,19 @@
 .NavBar {
-    background-color: rgb(211, 211, 211);
-    border: 2px solid rgb(184, 182, 182);
-    padding-left: 5px;
+    background-color: rgb(7, 114, 141);
+    border: 2px solid rgb(7, 114, 141);
+    padding-left: 10px;
+    color:black;
 }
 
 .NavLink {
-    padding-left: 5px;
+    padding-left: 29px;
+    padding-right: 20px;
 }
 
 .NavBar{
     --bs-navbar-padding-x: 0;
     --bs-navbar-padding-y: 0.5rem;
-    --bs-navbar-color: rgba(54, 53, 53, 0.55);
+    --bs-navbar-color: rgba(206, 65, 65, 0.55);
     --bs-navbar-hover-color: rgba(0, 0, 0, 0.7);
     --bs-navbar-disabled-color: rgba(0, 0, 0, 0.3);
     --bs-navbar-active-color: rgba(0, 0, 0, 0.9);
@@ -41,7 +43,11 @@
     padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
 }
 
+
 a {
-    --bs-link-hover-color:rgba(0, 0, 0, 0.9);
+    --bs-link-hover-color:rgba(246, 119, 9, 0.9);
     text-decoration: none;
+    color:rgb(251, 252, 252);
+    padding-right: 10px;
+    padding-top:5px;
 }

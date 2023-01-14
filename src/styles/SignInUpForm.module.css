@@ -1,14 +1,16 @@
 .Row {
-    height: calc(100vh - 81px);
+    height: calc(50vh - 100px);
   }
   .Input {
     background: #ffffff;
-    border: 8px solid #f0f1f9;
+    border: 4px solid #a8accc;
     box-sizing: border-box;
-    border-radius: 10px;
-    color: #7177a1;
+    border-radius: 15px;
+    color: #38b51c;
     text-align: left;
-    padding: 5px;
+    padding: 12px;
+    margin-bottom: 10px;
+    margin-top:5px;
   }
   
   .Header {
@@ -19,7 +21,8 @@
     text-align: center;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #2142b2;
+    color: #1c8b0d;
+    margin-top:10px;
   }
   
   .Link {
@@ -33,14 +36,20 @@
     color: #ff9254;
   }
   
+  .Link span:hover {
+    color: #ff9254;
+    font-weight: bold;
+    font-size:17px;
+  }
+
   .Container {
-    padding: 30px 10px;
+    padding: 10px 10px;
   }
   
   .SignInCol {
-    height: 320px;
+    height: 450px;
   }
   
   .SignUpCol {
-    height: 375px;
+    height: 275px;
   }
