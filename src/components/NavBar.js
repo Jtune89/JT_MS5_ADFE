@@ -29,7 +29,7 @@ const NavBar = () => {
   const loggedInIcons = <>
   <NavLink to ='/feed'> <i className="fas fa-stream"></i> Feed</NavLink>
   <NavLink to ='/liked'> <i className="fas fa-heart"></i> Liked</NavLink>
-  <NavLink to ='/commented'> <i className="fas fa-stream"></i> Commented</NavLink>
+  <NavLink to ='/commented'> <i className="fa-regular fa-comment"></i> Commented</NavLink>
   <NavLink to ='/signin' onClick={handleSignOut}>
     <i className="fas fa-sign-out-alt"></i> Sign Out</NavLink>
   <NavLink to={`/profiles/${currentUser?.profile_id}`}>
