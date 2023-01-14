@@ -4,4 +4,7 @@
     justify-content: center;
     align-items: center;
     min-height: 120px;
+    background-color: rgb(242, 247, 251);
+    height: 33vh;
+    width: 33vh;
   }

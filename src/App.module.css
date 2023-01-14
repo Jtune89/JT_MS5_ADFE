@@ -1,6 +1,6 @@
 .App {
     font-family: 'Poppins', sans-serif;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     min-height: 100vh;
     font-size: 15px;
 }
@@ -17,4 +17,3 @@ a {
     padding-top: 8px;
     font-size: 15px;
 }
-
