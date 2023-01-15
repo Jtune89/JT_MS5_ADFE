@@ -30,3 +30,13 @@
     padding-top: 0;
     padding-bottom: 0;
 }
+
+.Dots{
+    display:inline;
+    float:right;
+  }
+  
+  .Dots :hover{
+    font-size: 35px;
+    color: rgba(246, 119, 9, 0.9);
+  }
