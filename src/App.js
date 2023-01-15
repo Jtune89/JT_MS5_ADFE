@@ -8,6 +8,7 @@ import SignInForm from "./pages/auth/SignInForm";
 import PostCreateForm from "./pages/posts/PostCreateForm";
 import PostPage from "./pages/posts/PostPage";
 import PostsPage from "./pages/posts/PostsPage";
+import PostEditForm from "./pages/posts/PostEditForm";
 import { useCurrentUser } from "./contexts/CurrentUserContext";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <Route path="/commented" element= 
               {<PostsPage message="No results found. Adjust the search word or comment on a post" 
               filter={`comments__owner__profile=${profile_id}&ordering=-comments__created_at`} />} />
+            <Route path="/posts/:id/edit" element={<PostEditForm />} />
             <Route path="/signin" element= {<SignInForm />} />
             <Route path="/register" element= {<SignUpForm />} />
             <Route path="/posts/create" element={<PostCreateForm />} />
