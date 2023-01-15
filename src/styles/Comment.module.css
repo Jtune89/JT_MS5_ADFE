@@ -1,0 +1,32 @@
+.Owner {
+    font-weight: bold;
+    color:rgba(246, 119, 9, 0.9);
+    margin-right: 8px;
+    display: inline-block;
+    border: none;
+  }
+  
+  .Date {
+    font-weight: lighter;
+    color: #c1c1c5;
+    display: inline-block;
+    border: none;
+  }
+
+.Card {
+    --bs-card-height: ;
+    --bs-card-color: ;
+    --bs-card-img-overlay-padding: 1rem;
+    --bs-card-group-margin: 0.75rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: var(--bs-card-height);
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: none;
+    border-radius: var(--bs-card-border-radius);
+    padding-top: 0;
+    padding-bottom: 0;
+}
