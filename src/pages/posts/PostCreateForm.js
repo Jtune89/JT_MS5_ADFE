@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
-
+import Alert from "react-bootstrap/Alert";
 import Upload from "../../assets/upload.png";
 
 import styles from "../../styles/PostCreateEditForm.module.css";
@@ -13,6 +13,8 @@ import appStyles from "../../App.module.css";
 import btnStyles from "../../styles/Button.module.css";
 import Asset from "../../components/Asset";
 import { Image } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { axiosReq } from "../../api/axiosDefaults";
 
 function PostCreateForm() {
   const [errors, setErrors] = useState({});
@@ -23,6 +25,9 @@ function PostCreateForm() {
     image: "",
   });
   const { title, caption, image } = postData;
+
+  const imageInput = useRef(null);
+  const history = useNavigate()
 
   const handleChange = (event) => {
     setPostData({
@@ -41,20 +46,49 @@ function PostCreateForm() {
     }
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    const formData = new FormData();
+
+    formData.append('title', title)
+    formData.append('content', caption)
+    formData.append('image', imageInput.current.files[0])
+
+    try {
+      const {data} = await axiosReq.post('/posts/', formData);
+      history(`/posts/${data.id}`);
+    } catch(err){
+      if (err.response?.status !== 401){
+        setErrors(err.response?.data)
+      }
+    }
+  }
+
   const textFields = (
     <div className="text-center">
       <Form.Group>
         <Form.Label>Title</Form.Label>
         <Form.Control type="text" name="title" value={title} onChange={handleChange} />
       </Form.Group>
+      {errors?.title?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
+
       <Form.Group>
         <Form.Label>Caption</Form.Label>
         <Form.Control as="textarea" rows={6} name="caption" value={caption} onChange={handleChange} />
       </Form.Group>
+      {errors?.content?.map((message, idx) => (
+        <Alert variant="warning" key={idx}>
+          {message}
+        </Alert>
+      ))}
 
       <Button
         className={`${btnStyles.Button} ${btnStyles.Blue}`}
-        onClick={() => {}}
+        onClick={() => history(-1)()}
       >
         Cancel
       </Button>
@@ -65,7 +99,7 @@ function PostCreateForm() {
   );
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <Row>
         <Col className="py-2 p-0 p-md-2" md={7} lg={8}>
           <Container
@@ -98,6 +132,7 @@ function PostCreateForm() {
                 id="image-upload"
                 accept="image/*"
                 onChange={handleChangeImage}
+                ref={imageInput}
               />
               </div>
             </Form.Group>
