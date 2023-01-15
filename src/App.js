@@ -7,14 +7,28 @@ import SignUpForm from "./pages/auth/SignUpForm";
 import SignInForm from "./pages/auth/SignInForm";
 import PostCreateForm from "./pages/posts/PostCreateForm";
 import PostPage from "./pages/posts/PostPage";
+import PostsPage from "./pages/posts/PostsPage";
+import { useCurrentUser } from "./contexts/CurrentUserContext";
 
 function App() {
+  const currentUser = useCurrentUser();
+  const profile_id = currentUser?.profile_id || ""
   return (
     <div className={styles.App}>
       <NavBar />
       <Container className={styles.Main}>
       <Routes>
-            <Route path="/" element= {<h1>Home Page</h1>} />
+            <Route path="/" element= 
+              {<PostsPage message="No results found. Adjust the search word" />} />
+            <Route path="/feed" element= 
+              {<PostsPage message="No results found. Adjust the search word or follow a user" 
+              filter={`owner__followed__owner__profile=${profile_id}&`} />} />
+            <Route path="/liked" element= 
+              {<PostsPage message="No results found. Adjust the search word or like a post" 
+              filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`} />} />
+            <Route path="/commented" element= 
+              {<PostsPage message="No results found. Adjust the search word or comment on a post" 
+              filter={`comments__owner__profile=${profile_id}&ordering=-comments__created_at`} />} />
             <Route path="/signin" element= {<SignInForm />} />
             <Route path="/register" element= {<SignUpForm />} />
             <Route path="/posts/create" element={<PostCreateForm />} />

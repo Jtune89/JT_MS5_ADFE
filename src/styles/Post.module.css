@@ -20,11 +20,11 @@
   }
   
   .Heart:hover {
-    color: #2142b2;
+    color:rgba(246, 119, 9, 0.9)
   }
   
   .HeartOutline:hover {
-    color: #f85032;
+    color: rgba(246, 119, 9, 0.9)
   }
 
   .Profile{
