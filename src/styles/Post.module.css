@@ -22,3 +22,16 @@
   .HeartOutline:hover {
     color: #f85032;
   }
+
+  .Profile{
+  text-align: left;
+  border: none;
+  display: inline;
+  float:left;
+  }
+
+  .Update{
+    text-align:right;
+    display: inline-block;
+    padding-left: 20px;
+  }

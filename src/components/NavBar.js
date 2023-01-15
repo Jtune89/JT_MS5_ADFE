@@ -24,21 +24,21 @@ const NavBar = () => {
   };
 
   const addPostIcon = (
-  <NavLink to ='/posts/create'> <i className="far fa-plus-square"></i> Add Post</NavLink>
+  <NavLink to ='/posts/create' className={styles.NavIcon}> <i className="far fa-plus-square"></i> Add Post</NavLink>
   )
   const loggedInIcons = <>
-  <NavLink to ='/feed'> <i className="fas fa-stream"></i> Feed</NavLink>
-  <NavLink to ='/liked'> <i className="fas fa-heart"></i> Liked</NavLink>
-  <NavLink to ='/commented'> <i className="fa-regular fa-comment"></i> Commented</NavLink>
-  <NavLink to ='/signin' onClick={handleSignOut}>
+  <NavLink to ='/feed' className={styles.NavIcon}> <i className="fas fa-stream"></i> Feed</NavLink>
+  <NavLink to ='/liked' className={styles.NavIcon}> <i className="fas fa-heart"></i> Liked</NavLink>
+  <NavLink to ='/commented' className={styles.NavIcon}> <i className="fa-regular fa-comment"></i> Commented</NavLink>
+  <NavLink to ='/signin' onClick={handleSignOut} className={styles.NavIcon}>
     <i className="fas fa-sign-out-alt"></i> Sign Out</NavLink>
-  <NavLink to={`/profiles/${currentUser?.profile_id}`}>
-  <Avatar src={currentUser?.profile_image} text='Your Profile' height={40}/>
+  <NavLink to={`/profiles/${currentUser?.profile_id}`} className={styles.NavIcon}>
+  <Avatar src={currentUser?.profile_image} text='Your Profile' height={40} className={styles.NavIcon}/>
   </NavLink>
   </>
   const loggedOutIcons = <>
-  <NavLink to ='/signin'> <i className="fas fa-sign-in-alt"></i> Sign In</NavLink>
-  <NavLink to ='/register'> <i className="fas fa-user-plus"></i> Register</NavLink>
+  <NavLink to ='/signin' className={styles.NavIcon}> <i className="fas fa-sign-in-alt"></i> Sign In</NavLink>
+  <NavLink to ='/register' className={styles.NavIcon}> <i className="fas fa-user-plus"></i> Register</NavLink>
   </>
 
   return (
@@ -54,7 +54,7 @@ const NavBar = () => {
             aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <NavLink to ='/'> <i className="fas fa-home"></i> Home</NavLink>
+            <NavLink to ='/' className={styles.NavIcon}> <i className="fas fa-home"></i> Home</NavLink>
             {currentUser ? loggedInIcons : loggedOutIcons}
           </Nav>
         </Navbar.Collapse>
