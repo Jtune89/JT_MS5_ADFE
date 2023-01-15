@@ -128,6 +128,7 @@ function PostCreateForm() {
               )}
               <div class="image-upload">
               <Form.Control
+                className={styles.Upload}
                 type="file"
                 id="image-upload"
                 accept="image/*"
