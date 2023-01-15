@@ -31,12 +31,12 @@
     padding-bottom: 0;
 }
 
-.Dots{
-    display:inline;
+.CommentDots{
+
     float:right;
   }
   
-  .Dots :hover{
+  .CommentDots :hover{
     font-size: 35px;
     color: rgba(246, 119, 9, 0.9);
   }
