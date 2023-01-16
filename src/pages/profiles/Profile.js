@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from '../../styles/Profile.module.css';
-import btnStyles from '../../styles/Button.module.css';
 import { useCurrentUser } from '../../contexts/CurrentUserContext';
 import { Link } from 'react-router-dom';
 import Avatar from '../../components/Avatar';
@@ -17,7 +16,7 @@ const Profile = (props) => {
     const {handleFollow, handleUnfollow} = useSetProfileData();
   
     return (
-    <div className={`my-3 d-flex align-items-center ${mobile && "flex-column"}`}>
+    <div className={`my-3 d-flex justify-content-start align-items-center ${mobile && "flex-column"}`}>
         <div>
             <Link className='align-self-center' to={`/profiles/${id}`}>
                 <Avatar src={image} height={imageSize} />
@@ -29,12 +28,12 @@ const Profile = (props) => {
         <div className={`text-right ${!mobile && 'ml-auto'}`}>
             {!mobile && currentUser && !is_owner && (
                 following_id ? (
-                    <Button className={`{btnStyles.Button} ${btnStyles.BlackOutline}`}
+                    <Button className={styles.ButtonProfile}
                     onClick={() => handleUnfollow(profile)}>
                         unfollow
                         </Button>
                 ) : (
-                    <Button className={`{btnStyles.Button} ${btnStyles.BlackOutline}`}
+                    <Button className={styles.ButtonProfile}
                     onClick={() => handleFollow(profile)}>
                         follow
                         </Button>

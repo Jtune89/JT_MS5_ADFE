@@ -4,17 +4,19 @@
   padding: 0px;
 }
 
+.DropdownItem :hover {
+  font-size: 10px;
+  color: rgba(246, 119, 9, 0.9);
+}
+
 .Absolute {
   position: absolute;
   right: 0;
   z-index: 99;
+  padding-top: 10px;
 }
 
-.Dots{
-  font-size: 25px;
-}
-
-.Dots :hover{
+.Absolute :hover {
   font-size: 35px;
   color: rgba(246, 119, 9, 0.9);
 }

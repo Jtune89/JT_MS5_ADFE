@@ -11,3 +11,21 @@
       height: 250px;
     }
   }
+
+  .Button {
+    border: none;
+    background-color:rgb(7, 114, 141);
+    color: rgb(215, 234, 250);
+    border-radius: 100px;
+    padding: 4px 10px;
+    min-width: 75px;
+    margin: 8px;
+    display:inline;
+    float: right;
+  }
+  
+  .Button:hover {
+    cursor: pointer;
+    background-color: rgba(246, 119, 9, 0.9);
+    color:white
+  }

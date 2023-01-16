@@ -1,3 +1,22 @@
 .WordBreak {
     word-break: break-all;
   }
+
+  .ButtonProfile {
+    border: none;
+    background-color:rgb(7, 114, 141);
+    color: rgb(215, 234, 250);
+    border-radius: 100px;
+    margin-left: 5px;
+  }
+  
+  .ButtonProfile:hover {
+    cursor: pointer;
+    background-color: rgba(246, 119, 9, 0.9);
+    color:white
+  }
+
+ .profileFollow{
+  text-align: center;
+  display: block;
+ }

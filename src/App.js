@@ -32,8 +32,8 @@ function App() {
               {<PostsPage message="No results found. Adjust the search word or like a post" 
               filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`} />} />
             <Route path="/commented" element= 
-              {<PostsPage message="No results found. Adjust the search word or comment on a post" 
-              filter={`comments__owner__profile=${profile_id}&ordering=-comments__created_at`} />} />
+              {<PostsPage message="No results found. Adjust the search word or like a post" 
+              filter={`comments__owner=${profile_id}&ordering=-comments__created_at&`} />} />
             <Route path="/posts/:id/edit" element={<PostEditForm />} />
             <Route path="/signin" element= {<SignInForm />} />
             <Route path="/register" element= {<SignUpForm />} />

@@ -24,14 +24,14 @@ function PostsPage({message, filter = ""}) {
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const {data} = await axiosReq.get(`/posts/?${filter}search=${query}`);
+                const { data } = await axiosReq.get(`/posts/?${filter}search=${query}`);
                 setPosts(data);
                 setHasLoaded(true);
             } catch(err){
                 console.log(err);
 
             }
-        }
+        };
         setHasLoaded(false);
         const timer = setTimeout(() => {
           fetchPosts();
