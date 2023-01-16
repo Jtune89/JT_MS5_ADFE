@@ -137,7 +137,8 @@ const ProfileEditForm = () => {
                   Change the image
                 </Form.Label>
               </div>
-              <Form.Control
+              <Form.Control className={appStyles.editUpload}
+                type="file"
                 id="image-upload"
                 ref={imageFile}
                 accept="image/*"
