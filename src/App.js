@@ -17,7 +17,8 @@ import ProfileEditForm from "./pages/profiles/ProfileEditForm";
 
 function App() {
   const currentUser = useCurrentUser();
-  const profile_id = currentUser?.profile_id || ""
+  const profile_id = currentUser?.profile_id || "";
+
   return (
     <div className={styles.App}>
       <NavBar />
@@ -25,15 +26,15 @@ function App() {
       <Routes>
             <Route path="/" element= 
               {<PostsPage message="No results found. Adjust the search word" />} />
+            
             <Route path="/feed" element= 
               {<PostsPage message="No results found. Adjust the search word or follow a user" 
               filter={`owner__followed__owner__profile=${profile_id}&`} />} />
+            
             <Route path="/liked" element= 
               {<PostsPage message="No results found. Adjust the search word or like a post" 
               filter={`likes__owner__profile=${profile_id}&ordering=-likes__created_at&`} />} />
-            <Route path="/commented" element= 
-              {<PostsPage message="No results found. Adjust the search word or like a post" 
-              filter={`comments__owner=${profile_id}&ordering=-comments__created_at&`} />} />
+
             <Route path="/posts/:id/edit" element={<PostEditForm />} />
             <Route path="/signin" element= {<SignInForm />} />
             <Route path="/register" element= {<SignUpForm />} />

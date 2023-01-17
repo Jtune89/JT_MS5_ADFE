@@ -29,7 +29,6 @@ const NavBar = () => {
   const loggedInIcons = <>
   <NavLink to ='/feed' className={styles.NavIcon}> <i className="fas fa-stream"></i> Feed</NavLink>
   <NavLink to ='/liked' className={styles.NavIcon}> <i className="fas fa-heart"></i> Liked</NavLink>
-  <NavLink to ='/commented' className={styles.NavIcon}> <i className="fa-regular fa-comment"></i> Commented</NavLink>
   <NavLink to ='/signin' onClick={handleSignOut} className={styles.NavIcon}>
     <i className="fas fa-sign-out-alt"></i> Sign Out</NavLink>
   <NavLink to={`/profiles/${currentUser?.profile_id}`} className={styles.NavIcon}>

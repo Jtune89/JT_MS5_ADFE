@@ -8,6 +8,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
+import { MoreDropdown } from "../../components/MoreDropdown";
 
 import { axiosReq } from "../../api/axiosDefaults";
 import {
@@ -24,6 +25,8 @@ const ProfileEditForm = () => {
   const { id } = useParams();
   const history = useNavigate();
   const imageFile = useRef();
+
+
 
   const [profileData, setProfileData] = useState({
     name: "",
@@ -159,6 +162,9 @@ const ProfileEditForm = () => {
           <Container className={appStyles.Content}>{textFields}</Container>
         </Col>
       </Row>
+      <MoreDropdown
+            
+          />
     </Form>
   );
 };
