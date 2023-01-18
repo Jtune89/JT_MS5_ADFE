@@ -22,9 +22,8 @@ const DeleteProfile = () => {
         if (currentUser?.profile_id?.toString() === id)
         try {
         await axiosRes.delete(`/profiles/${id}/`); 
-        history("/");
         } catch (err) {
-        console.log(err);
+          console.log(err);
         }
         };
     
@@ -32,19 +31,25 @@ const DeleteProfile = () => {
         try 
           {await axios.post("dj-rest-auth/logout/");
             setCurrentUser(null);
-            history("/");
             } 
             catch (err) {
               console.log(err);
             }
           };
+    
+    const clickHandler = async  () => {
+      handleDelete();
+      handleSignOut();
+      history("/");
+    }
 
   return (
-    <Form onSubmit={handleSignOut}>
+    <Form onSubmit={clickHandler}>
           
-      <Container className={styles.DeleteForm} onSubmit={handleSignOut}>
+      <Container className={styles.DeleteForm}>
         <h3>Do you really want to delete your profile?</h3>
-        <h6>This action cannot be undone and your profile will be gone forever</h6>
+        <h6><strong>!! </strong>This action cannot be undone and your profile will be gone forever
+        <strong> !!</strong></h6>
       <br></br>
       <Button
         className={styles.ButtonProfile}
@@ -53,7 +58,7 @@ const DeleteProfile = () => {
         cancel
       </Button>
       <Button className={styles.ButtonProfile} type="submit"
-      onClick={handleDelete}>
+      onClick={clickHandler}>
         delete
       </Button>
       </Container>
