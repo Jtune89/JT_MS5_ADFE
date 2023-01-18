@@ -83,7 +83,7 @@ const Post = (props) => {
           </Link>
           <div className={styles.Update}>
             <span>{updated_at}</span>
-            {is_owner && postPage && <MoreDropdown className={styles.Dots}
+            {is_owner && postPage && <MoreDropdown className={styles.PostDropdownItem}
               handleEdit={handleEdit}
               handleDelete={handleDelete}/>}
           </div>

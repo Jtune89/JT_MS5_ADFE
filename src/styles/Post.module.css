@@ -40,4 +40,8 @@
     float:right;
   }
 
+  .PostDropdownItem{
+    position: fixed;
+    padding-left: 100px;
+  }
 
