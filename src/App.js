@@ -14,6 +14,7 @@ import ProfilePage from "./pages/profiles/ProfilePage";
 import UsernameForm from "./pages/profiles/UsernameForm";
 import UserPasswordForm from "./pages/profiles/UserPasswordForm";
 import ProfileEditForm from "./pages/profiles/ProfileEditForm";
+import DeleteProfile from "./pages/profiles/DeleteProfile";
 
 function App() {
   const currentUser = useCurrentUser();
@@ -53,6 +54,7 @@ function App() {
             <Route path="/profiles/:id/edit/username" element={<UsernameForm />} />
             <Route path="/profiles/:id/edit/password" element={<UserPasswordForm />} />
             <Route path="/profiles/:id/edit" element={<ProfileEditForm />} />
+            <Route path="/profiles/:id/edit/delete" element={<DeleteProfile />} />
             <Route render={() => <h3>Page not found</h3>} />
           </Routes>
       </Container>
