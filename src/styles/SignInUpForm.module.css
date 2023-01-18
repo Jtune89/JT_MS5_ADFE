@@ -3,10 +3,10 @@
   }
   .Input {
     background: #ffffff;
-    border: 4px solid #a8accc;
+    border: 2px solid #ff9254;
     box-sizing: border-box;
     border-radius: 15px;
-    color: #38b51c;
+    color: rgb(7, 114, 141);
     text-align: left;
     padding: 12px;
     margin-bottom: 10px;
@@ -21,7 +21,7 @@
     text-align: center;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #1c8b0d;
+    color: rgb(7, 114, 141);
     margin-top:10px;
   }
   
@@ -52,4 +52,16 @@
   
   .SignUpCol {
     height: 275px;
+  }
+
+  .SigninButton{
+    background-color:  rgb(7, 114, 141);
+    color: white;
+    padding: 10px 50px;
+    width: 100%;
+  }
+
+  .SigninButton :hover{
+    background-color:  rgba(246, 119, 9, 0.9);
+    color: white;
   }

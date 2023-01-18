@@ -35,7 +35,7 @@
   .Blue,
   .BlueOutline:hover,
   .Bright:hover {
-    background-color:  #4ab221;
+    background-color:  rgba(246, 119, 9, 0.9);
     color: #ffffff;
   }
   
@@ -43,15 +43,15 @@
   .Blue:hover {
     /* border: 1px solid #2142b2; */
     background-color: #ffffff;
-    color:  #4ab221;
+    color:  rgb(7, 114, 141);
   }
   
   .Black,
   .BlackOutline:hover {
     /* background-color: #242a3d;
     color: white; */
-    background-color: #242a3d;
-    color: aliceblue;
+    background-color: rgb(7, 114, 141);
+    color: rgba(246, 119, 9, 0.9);
   }
   
   .Black:hover,
@@ -59,11 +59,11 @@
     /* background-color: #dadadf;
     color: #242a3d;
     border-color: #242a3d; */
-    background-color: aliceblue;
-    color: #242a3d;
+    background-color: rgba(246, 119, 9, 0.9);
+    color: rgb(7, 114, 141);
   }
   
   .Bright {
-    background-color: #9ad981;
-    color: #020c00;
+    background-color: rgb(7, 114, 141);
+    color:white
   }
