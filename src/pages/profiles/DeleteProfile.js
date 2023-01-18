@@ -2,8 +2,6 @@ import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import { axiosRes } from "../../api/axiosDefaults";
 import axios from "axios";
@@ -12,7 +10,6 @@ import {
     useSetCurrentUser
   } from "../../contexts/CurrentUserContext";
 import styles from "../../styles/DeleteProfile.module.css";
-import appStyles from "../../App.module.css";
 
 const DeleteProfile = () => {
 
@@ -32,21 +29,23 @@ const DeleteProfile = () => {
         };
     
     const handleSignOut = async () => {
-            try {
-              await axios.post("dj-rest-auth/logout/");
-              setCurrentUser(null);
-              history("/");
-            } catch (err) {
+        try 
+          {await axios.post("dj-rest-auth/logout/");
+            setCurrentUser(null);
+            history("/");
+            } 
+            catch (err) {
               console.log(err);
             }
           };
 
-  const textFields = (
-    <>
+  return (
+    <Form onSubmit={handleSignOut}>
+          
       <Container className={styles.DeleteForm} onSubmit={handleSignOut}>
         <h3>Do you really want to delete your profile?</h3>
-      
-
+        <h6>This action cannot be undone and your profile will be gone forever</h6>
+      <br></br>
       <Button
         className={styles.ButtonProfile}
         onClick={() => history(-1)()}
@@ -58,17 +57,6 @@ const DeleteProfile = () => {
         delete
       </Button>
       </Container>
-    </>
-  );
-
-  return (
-    <Form onSubmit={handleSignOut}>
-      <Row>
-
-        <Col md={5} lg={6} className="d-none d-md-block p-0 p-md-2 text-center">
-          <Container className={appStyles.Content}>{textFields}</Container>
-        </Col>
-      </Row>
     </Form>
   );
 };
