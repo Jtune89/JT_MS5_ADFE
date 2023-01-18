@@ -38,7 +38,7 @@ function App() {
 
               <Route path="/commented" element= 
               {<PostsPage message="No results found. Adjust the search word or like a post" 
-              filter={`comments__owner__profile=${profile_id}&ordering=-comments__created_at&`} />} />
+              filter={`comment__owner__profile=${profile_id}&ordering=-comment__created_at&`} />} />
 
             <Route path="/posts/:id/edit" element={<PostEditForm />} />
             <Route path="/signin" element= {<SignInForm />} />
