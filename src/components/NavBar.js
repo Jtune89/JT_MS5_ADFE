@@ -31,7 +31,7 @@ const NavBar = () => {
   <NavLink to ='/liked' className={styles.NavIcon}> <i className="fas fa-heart"></i> Liked</NavLink>
   <NavLink to ='/commented' className={styles.NavIcon}> <i className="fa-regular fa-comment"></i> Commented</NavLink>
   <NavLink to ='/activity' className={styles.NavIcon}> <i class="fa-regular fa-bell"></i> Activity</NavLink>
-  <NavLink to ='/signin' onClick={handleSignOut} className={styles.NavIcon}>
+  <NavLink to ='/' onClick={handleSignOut} className={styles.NavIcon}>
     <i className="fas fa-sign-out-alt"></i> Sign Out</NavLink>
   <NavLink to={`/profiles/${currentUser?.profile_id}`} className={styles.NavIcon}>
   <Avatar src={currentUser?.profile_image} text='Your Profile' height={40} className={styles.NavIcon}/>
