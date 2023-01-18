@@ -43,8 +43,8 @@ const DeleteProfile = () => {
 
   const textFields = (
     <>
-      <Form.Group onSubmit={handleSignOut}>
-        <Form.Label>Do you really want to delete your profile?</Form.Label>
+      <Container className={styles.DeleteForm} onSubmit={handleSignOut}>
+        <h3>Do you really want to delete your profile?</h3>
       
 
       <Button
@@ -57,7 +57,7 @@ const DeleteProfile = () => {
       onClick={handleDelete}>
         delete
       </Button>
-      </Form.Group>
+      </Container>
     </>
   );
 

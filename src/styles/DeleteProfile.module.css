@@ -11,3 +11,10 @@
     background-color: rgba(246, 119, 9, 0.9);
     color:white
   }
+
+  .DeleteForm{
+    text-align: center;
+    position: fixed;
+    padding-top: 50px;
+    color: rgb(7, 114, 141);
+  }

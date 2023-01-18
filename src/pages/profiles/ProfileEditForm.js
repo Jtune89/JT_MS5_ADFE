@@ -8,15 +8,13 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Alert from "react-bootstrap/Alert";
-import { MoreDropdown } from "../../components/MoreDropdown";
+import styles from "../../styles/Profile.module.css";
 
 import { axiosReq } from "../../api/axiosDefaults";
 import {
   useCurrentUser,
   useSetCurrentUser,
 } from "../../contexts/CurrentUserContext";
-
-import btnStyles from "../../styles/Button.module.css";
 import appStyles from "../../App.module.css";
 
 const ProfileEditForm = () => {
@@ -105,12 +103,12 @@ const ProfileEditForm = () => {
         </Alert>
       ))}
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={styles.ButtonProfile} 
         onClick={() => history(-1)()}
       >
         cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
+      <Button className={styles.ButtonProfile} type="submit">
         save
       </Button>
     </>
@@ -134,7 +132,7 @@ const ProfileEditForm = () => {
               ))}
               <div>
                 <Form.Label
-                  className={`${btnStyles.Button} ${btnStyles.Blue} btn my-auto`}
+                  className={`${styles.ButtonProfile} btn my-auto`}
                   htmlFor="image-upload"
                 >
                   Change the image
@@ -162,9 +160,6 @@ const ProfileEditForm = () => {
           <Container className={appStyles.Content}>{textFields}</Container>
         </Col>
       </Row>
-      <MoreDropdown
-            
-          />
     </Form>
   );
 };
