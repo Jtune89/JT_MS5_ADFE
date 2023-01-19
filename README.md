@@ -73,6 +73,7 @@ A user can find content all over the site and engage with followers and the peop
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 ## User Stories > Build > Testing > Deployment
 
+<img width="943" alt="Screenshot 2023-01-19 at 17 42 03" src="https://user-images.githubusercontent.com/95533259/213520112-27400bff-e769-436f-8b67-e589e167d0ab.png">
 
 #### User Stories / Build:
 
