@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from '../styles/NavBar.module.css';
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
+import { Container } from "react-bootstrap";
+import { Nav } from "react-bootstrap";
 import logo from '../assets/logo.png';
 import { NavLink } from 'react-router-dom';
 import { useCurrentUser, useSetCurrentUser } from '../contexts/CurrentUserContext';
