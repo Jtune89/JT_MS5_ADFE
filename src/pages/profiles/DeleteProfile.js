@@ -23,7 +23,7 @@ const DeleteProfile = () => {
         try {
         await axiosRes.delete(`/profiles/${id}/`); 
         } catch (err) {
-          console.log(err);
+          //console.log(err);
         }
         };
     
@@ -33,7 +33,7 @@ const DeleteProfile = () => {
             setCurrentUser(null);
             } 
             catch (err) {
-              console.log(err);
+              //console.log(err);
             }
           };
     

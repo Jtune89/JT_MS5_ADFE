@@ -39,7 +39,7 @@ const Post = (props) => {
       await axiosRes.delete(`/posts/${id}/`);
       history(-1)();
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   };
 
@@ -55,7 +55,7 @@ const Post = (props) => {
         })
       }))
     } catch(err){
-      console.log(err);
+      //console.log(err);
     }
   };
 
@@ -71,7 +71,7 @@ const Post = (props) => {
         }),
       }));
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   };
 
