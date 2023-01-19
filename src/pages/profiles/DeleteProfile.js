@@ -26,7 +26,7 @@ const DeleteProfile = () => {
           //console.log(err);
         }
         };
-    
+
     const handleSignOut = async () => {
         try 
           {await axios.post("dj-rest-auth/logout/");

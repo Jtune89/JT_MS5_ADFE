@@ -102,6 +102,7 @@ const ProfileEditForm = () => {
           {message}
         </Alert>
       ))}
+      <br></br>
       <Button
         className={styles.ButtonProfile} 
         onClick={() => history(-1)()}
@@ -135,7 +136,7 @@ const ProfileEditForm = () => {
                   className={`${styles.ButtonProfile} btn my-auto`}
                   htmlFor="image-upload"
                 >
-                  Change the image
+                  change the image
                 </Form.Label>
               </div>
               <Form.Control className={appStyles.editUpload}

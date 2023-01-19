@@ -87,15 +87,15 @@ function PostCreateForm() {
           {message}
         </Alert>
       ))}
-
+      <br></br>
       <Button
-        className={`${btnStyles.Button} ${btnStyles.Blue}`}
+        className={styles.ButtonProfile}
         onClick={() => history(-1)()}
       >
-        Cancel
+        cancel
       </Button>
-      <Button className={`${btnStyles.Button} ${btnStyles.Blue}`} type="submit">
-        Upload
+      <Button className={styles.ButtonProfile} type="submit">
+        upload
       </Button>
     </div>
   );

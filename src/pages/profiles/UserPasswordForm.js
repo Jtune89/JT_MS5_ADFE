@@ -11,7 +11,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { axiosRes } from "../../api/axiosDefaults";
 import { useCurrentUser } from "../../contexts/CurrentUserContext";
 
-import btnStyles from "../../styles/Button.module.css";
+import styles from "../../styles/Profile.module.css";
 import appStyles from "../../App.module.css";
 
 const UserPasswordForm = () => {
@@ -87,15 +87,16 @@ const UserPasswordForm = () => {
                 {message}
               </Alert>
             ))}
+            <br></br>
             <Button
-              className={`${btnStyles.Button} ${btnStyles.Blue}`}
+              className={styles.ButtonProfile}
               onClick={() => history(-1)()}
             >
               cancel
             </Button>
             <Button
               type="submit"
-              className={`${btnStyles.Button} ${btnStyles.Blue}`}
+              className={styles.ButtonProfile}
             >
               save
             </Button>
