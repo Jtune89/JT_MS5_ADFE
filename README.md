@@ -155,6 +155,13 @@ When I deployed the site to Heroku, it was clear that a user that was not logged
 
 Once this fix was implemented I was able to deploy the site again successfully.
 
+### Credits:
+- Code Institute Moments Walkthrough
+- Code Institute Tutoring Support
+- Slack Community
+- Stack Overflow Community
+- Various Google Resources
+
 
 
 
