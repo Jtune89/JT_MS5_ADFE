@@ -2,7 +2,6 @@
 
 # Shared is a photo sharing site which allows users to create an account, post their pictures with comments, follow other users as well as like and comment on other users posts.  It is aimed at the general public who wish to share their precious moments, forever capturing those as memories and can come back to relive those memories on their page.
 
-
 ## Functionality that exists on the site:
 
 - Create Account
@@ -17,6 +16,11 @@
 - Edit their profile including bio/profile image/username/password
 - Delete their profile if they no longer which to use the site
 
+### React Components
+
+I have used a variety of React components within the project, including but not limited to:
+
+- 
 
 ### The site has multiple useable pages within it:
 
@@ -123,6 +127,22 @@ I created a number of new users in order to complete the testing.  Functionality
 - adding & removing profile images
 - adding & removing posts
 
+In testing each of these, I would create a user and then log in.
+- I would then see the popular profiles and follow them, expecting that it would reflect that I was following them - which it did.
+- I would then view the followed profiles and unfollow them, expecting that it would reflect that I was not following them - which it did.
+- I would then create comments, expecting that it would show the comment I had created on the post - which it did
+- I would then delete the comments, expecting that it would no longer show the comment I had created on the post - which it did
+- I would then add likes to various posts, expecting that it would show the like I had put on the post and not let me like it again - which it did
+- I would then remove the like by following the same process that I did for adding the like, expecting that it would no longer be liked and give me the option of liking the post again - which it did
+- I would then delete the profile I had created - expecting that the profile would no longer be visible - which it wasn't
+- I repeatedly signed in and out of various profiles, expecting that it would log me in and out of the site - which it did
+- I would review each of the pages to ensure that the posts were showing based on the built logic, on various profiles - which it did
+- In the various profiles I had created for testing, I would edit the username by using the profile>edit username functionality, expecting that the username would change - which it did
+- In those same various profiles I had created for testing, I would edit the password by using the profile>edit password functionality, expecting that the password would change when I logged out and logged back in - which it did
+- In those same various profiles I had created for testing, I would add and remove profile images, by using the profile>edit profile image functionality, expecting that the image would be there and then would not be there when removed upon log in and logged out - which it was
+- I would create posts on each of the various profiles I had created for testing, by creating posts using the create posts functionality which created the posts and I would see them after logging in and logging out and then I would delete the posts and not see them on logging in and logging out.
+
+
 ### Testing Issues:
 - I found inconsistencies in the CSS formatting of buttons throughout the site and so implemented fixes on the CSS
 - The automated Axios testing required an update to the package.Json file
@@ -143,9 +163,13 @@ Performance could be better on here which is something we would address in the n
 ### Deployment:
 
 Deployment was completed using:
-- The DRF-API Django backend that I had created to handle the backend functionality - deployed to Heroku
+- The DRF-API Django backend that I had created to handle the backend functionality - deployed to Heroku.
 - React Front End - deployed to heroku
-- 
+
+In order to complete the deployment, I navigated to Heroko.com and I logged in using my username and password.  I have previously had to sign up to Heroku credits and pay £10 per month as a result of Code Institute's requirement to host projects on Heroku so I have an account set up ready to host this project.
+I selected NEW to create a new app and followed the steps on the Heroku site in order to link Heroku to Github so that the project could be deployed.  I had to ensure that the client_origin config vars has been set up otherwise the project wouldn't work. I clicked the Deploy tab in order to deploy my project, ensuring that it was deployed, meeting Code Institute's requirements of deploying projects on Heroku.  I clicked on Deploy Branch in order to deploy the project on to Heroku.  I think copied the link of the open browser from Heroku and pasted that link into the submission site provided by Code Institute so I could submit it for assessment.
+
+I followed the same steps for both the DRF_API Heroku Deployment & the React Front End Heroku Deployment.
 
 #### Deployment Issues:
 
