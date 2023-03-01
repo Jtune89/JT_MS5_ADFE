@@ -20,7 +20,21 @@
 
 I have used a variety of React components within the project, including but not limited to:
 
-- 
+- React Bootstrap (various components)
+- useNavigate
+- useState
+- Link
+- useParams
+- useEffect
+- useRef
+
+These are just a few of the components utilised across the site to enable the functionality of the site.  They are re-used across multiple pages of the site to enable the functionality to work.
+
+### Libaries 
+
+I used React JS as the library across the site because it is the best library and contains components, as outlined above, that can offer useability across the site.  The React JS library is also the library I have been taught to use so it seemed sensible to use the library that I know and understand.
+
+I also used Axios for authorisation of the users which enables them to log in and it connects the front end with the back end functionality.  I chose it because it met the requirements for my project.
 
 ### The site has multiple useable pages within it:
 
@@ -77,7 +91,17 @@ A user can find content all over the site and engage with followers and the peop
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 ## User Stories > Build > Testing > Deployment
 
+### Wireframe
+
 <img width="943" alt="Screenshot 2023-01-19 at 17 42 03" src="https://user-images.githubusercontent.com/95533259/213520112-27400bff-e769-436f-8b67-e589e167d0ab.png">
+
+### Design
+
+I took a manual reactive approach to design and styling of the site by using my eyes.  I find teal & orange a very good match of colours and I thought they looked good.  I used the same approach with the font used on the site.  I really like the Poppins font as I think it is asthetically pleasing.  
+
+I used the same method with all design elements across the site.  There was no documentation required as I decided using my eye sight that it looked good.
+
+In terms of the design of the site, I used the above wireframe which I do believe is visible to decide how to lay out the site.  The functionality required by users is outlined and then I used my eyes to decide where to put things.
 
 #### User Stories / Build:
 
